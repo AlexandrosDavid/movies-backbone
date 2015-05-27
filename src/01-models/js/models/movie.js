@@ -1,4 +1,4 @@
-var movieModel = Backbone.Model.extend ({ 
+var movie = Backbone.Model.extend ({ 
 	
 	initialize: function() {
 		console.log("movie init");
@@ -6,7 +6,7 @@ var movieModel = Backbone.Model.extend ({
 	
 });
 
-var movie1 = new movieModel({
+var movie1 = new movie({
  	
 	title:"Pulp Fiction",
 	year:"1994",
@@ -17,7 +17,7 @@ var movie1 = new movieModel({
 
 
 
-var movie2 = new movieModel({
+var movie2 = new movie({
  	
 	title:"Fight Club",
 	year:"1999",
@@ -26,7 +26,7 @@ var movie2 = new movieModel({
 	director:"David Fincher"
 });
 
-var movie3 = new movieModel({
+var movie3 = new movie({
  	
 	title:"Forrest Gump",
 	year:"1994",
@@ -36,7 +36,7 @@ var movie3 = new movieModel({
 });
 
 
-var movie4 = new movieModel({
+var movie4 = new movie({
  	
 	title:"Inception",
 	year:"2010",
@@ -45,7 +45,7 @@ var movie4 = new movieModel({
 	director:"Christopher Nolan"
 });
 
-var movie5 = new movieModel({
+var movie5 = new movie({
  	
 	title:"The Matrix",
 	year:"1999",
@@ -56,7 +56,7 @@ var movie5 = new movieModel({
 
 
 
-var movie6 = new movieModel({
+var movie6 = new movie({
  	
 	title:"Seven",
 	year:"1995",
@@ -66,7 +66,7 @@ var movie6 = new movieModel({
 });
 
 
-var movie7 = new movieModel({
+var movie7 = new movie({
  	
 	title:"Léon ",
 	year:"1994",
@@ -75,7 +75,7 @@ var movie7 = new movieModel({
 	director:"Luc Besson"
 });
 
-var movie8 = new movieModel({
+var movie8 = new movie({
  	
 	title:"InterStellar",
 	year:"2014",
@@ -85,7 +85,7 @@ var movie8 = new movieModel({
 });
 
 
-var movie9 = new movieModel({
+var movie9 = new movie({
  	
 	title:"Memento",
 	year:"2000",
@@ -94,7 +94,7 @@ var movie9 = new movieModel({
 	director:"Christopher Nolan"
 });
 
-var movie10 = new movieModel({
+var movie10 = new movie({
  	
 	title:"The Prestige",
 	year:"2006",
