@@ -545,9 +545,9 @@ var Movies =  Backbone.Collection.extend({
 	
 });
 
-var movies = new Movies;
+var movies = new Movies(moviesData.movies);
 
-movies.add(moviesData.movies);
+//movies.add(moviesData.movies);
 
 
 
