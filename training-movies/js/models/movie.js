@@ -1,6 +1,18 @@
-var Movie =  Backbone.Model.extend({
+define([
+  'jquery',
+  'underscore',
+  'backbone',
+  
+], function($, _, Backbone){
+
+
+return Backbone.Model.extend({
 	initialize : function() {
-		console.log("init movie");
-	}
+		console.log(this);
+	},
+
+});
+
+
 });
 

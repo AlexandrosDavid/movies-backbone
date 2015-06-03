@@ -1,10 +1,18 @@
+define([
+  'jquery',
+  'underscore',
+  'backbone',
+  'views/movie',
+  'collections/movies'
+  
+], function($, _, Backbone, MovieView, Movies){
+
+
 var MoviesView =  Backbone.View.extend({
 
 	tagName : "ul",
-	//el:"#movies",
 	initialize : function(options) {
-		console.log("init movies view");
-		
+		//console.log("init movies view");
 	},
 	
 	render: function(param) {
@@ -16,12 +24,13 @@ var MoviesView =  Backbone.View.extend({
 		_this.$el.empty();
 		
 		$("#allMovies").show();
-
+		$("#movieDetail").hide();
+		
 		_this.$el.parents("body").find("#movieDetail").hide();
 	
 		_this.collection.each(function(model) {
 		
-			var movieView = new MovieView({model:model, connectViews:cv});
+			var movieView = new MovieView({model:model});
 			_this.$el.append(movieView.render().$el);
 	
 		});
@@ -34,8 +43,8 @@ var MoviesView =  Backbone.View.extend({
 
 
 
-
-var moviesView = new MoviesView({collection:movies, connectViews:cv});
+var moviesView = new MoviesView({collection: Movies.collection});
 
 $("#allMovies").append(moviesView.render().$el);
 
+});

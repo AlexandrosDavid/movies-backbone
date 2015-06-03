@@ -535,21 +535,37 @@ var moviesData = {
 
 
 
-var Movies =  Backbone.Collection.extend({
 
-	model : Movie,
+define([
+  'jquery',
+  'underscore',
+  'backbone',
+  
+], function($, _, Backbone){
+
+
+var Movies = Backbone.Collection.extend({
+
+	//model : Movie,
 	initialize : function() {
 		console.log("init movies collection");
-	}
+	},
 	
 	
 });
 
 var movies = new Movies(moviesData.movies);
 
-//movies.add(moviesData.movies);
+console.log(moviesData.movies);
 
 
+return {
+	collection : movies,
+	data: moviesData,
+};
+
+
+});
 
 
 
