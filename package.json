@@ -1,0 +1,19 @@
+{
+  "name": "backbone-movies",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "node_modules/mocha-phantomjs/bin/mocha-phantomjs tests/index.html"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^3.0.0",
+    "mocha": "^2.2.5",
+    "mocha-phantomjs": "^3.5.3"
+  }
+}

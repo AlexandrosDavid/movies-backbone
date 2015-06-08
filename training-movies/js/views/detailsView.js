@@ -2,17 +2,21 @@ define([
   'jquery',
   'underscore',
   'backbone',
-  'collections/movies'
+  'collections/movies',
+  'views/moreInfo',
   
-], function($, _, Backbone, Movies){
+], function($, _, Backbone, Movies, MoreInfo){
 
 return Backbone.View.extend({
 
 	el:"#movieDetail",
+	//tagName: 'li',
 	
 	initialize : function(options) {
 		
 	},
+
+	template: _.template( $(".detailsTemplate").html()),
 	
 	events: {
 		'click #initPage' : 'initPage',
@@ -20,56 +24,36 @@ return Backbone.View.extend({
 	},
 	
 	render: function(id) {
-	
-		var model = Movies.collection.where({id:id});
+
+
+		this.model = this.collection.get(id);
 		
-		var title = model[0].get("title");
-		var year = model[0].get("year");
-		var synopsis = model[0].get("synopsis");
+		this.$el.append(this.template(this.model.toJSON()));
+		console.log(this.model);
 		
 		this.$el.show();
-		this.$el.find(".moreInfo").hide();
 		this.$el.parents("body").find("#allMovies").hide();
-		this.$el.find(".details").empty().append("<br/><ul><li> title: "+title+ "</li> <li> year: "+year+ " </li><li> synopsis: "+ synopsis+"</li></ul>");
-		
-		this.ajaxReq(model[0]);
+
+		//this.moreInfo();
+
+		var moreInfo = new MoreInfo({model:this.model});
+		moreInfo.render().$el;
 		
 		return this;
 	},
 	
 	
-	ajaxReq	: function(model) {
+	moreInfo	: function() {
 	
-		var title = model.get("title");
-		
 		var _this = this;
-	
-		model.fetch({
-			url: "http://www.imdbapi.com/?t="+title,
-		    dataType: "json",
-            type: 'POST',
-			async: true,
-			
 
-            success: function (model, response, options) {
-				console.log(response.Actors);
-				_this.$el.find(".moreInfo").empty().append(response.Actors);
-			},
-            error: function (model, response, options) {
-                console.log('not ok!');
-            }
-        
-			
-		});
-        
-		
+		_this.model.on('change', function() {
+			_this.$el.find(".moreInfo").html(_this.model.get('studio'));
+		})
+		_this.model.getDetails();
+	
 	},
 	
-	addInfo : function() {
-	
-		var _this = this;
-		_this.$el.find(".moreInfo").show();
-	}
 	
 });
 

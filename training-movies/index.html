@@ -23,11 +23,36 @@
 <div id="movieDetail">
 	<div class="button">
 		<a href="./index.html" id="initPage">All Movies</a>
-		<button id="addInfo">Add Info</button>
+	</div>
+
+	<script type="text/tempalte" class="detailsTemplate"> 	
+		<div class="details">
+			<ul>
+				<li> <%= title %> </li>
+				<li> <%= year %> </li>
+				<li> <%= synopsis %> </li>
+			<ul>
 		</div>
-	<div class="details"></div>
-	<div class="moreInfo"></button>
+		
+	</script>
 	
+	<script type="text/tempalte" class="moreInfoView"> 	
+		<div class="moreInfo">
+			
+			<img src="<%= posters.original %>" style="width:300px; height:300px;"/>  
+			
+				<br/><br/>
+			<ul>
+				<li> <%= abridged_cast[0].characters[0] %> as <%= abridged_cast[0].name %>  
+				<li> <%= abridged_cast[1].characters[0] %> as <%= abridged_cast[1].name %>
+				<li> <%= abridged_cast[2].characters[0] %> as <%= abridged_cast[2].name %>
+				<li> <%= abridged_cast[3].characters[0] %> as <%= abridged_cast[3].name %>
+			</ul>
+		
+
+		</div>
+	</script>
+
 </div>
 
 

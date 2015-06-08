@@ -8,7 +8,7 @@ define([
 ], function($, _, Backbone, MovieView, Movies){
 
 
-var MoviesView =  Backbone.View.extend({
+return Backbone.View.extend({
 
 	tagName : "ul",
 	initialize : function(options) {
@@ -19,7 +19,7 @@ var MoviesView =  Backbone.View.extend({
 	
 		var _this = this;
 		//alert("sdsd");
-		console.log(_this.$el)
+		console.log(_this.$el);
 		
 		_this.$el.empty();
 		
@@ -42,9 +42,5 @@ var MoviesView =  Backbone.View.extend({
 });
 
 
-
-var moviesView = new MoviesView({collection: Movies.collection});
-
-$("#allMovies").append(moviesView.render().$el);
-
+	
 });

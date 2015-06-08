@@ -7,14 +7,14 @@ require.config({
 
 });
 
-requirejs(['models/movie']);
-requirejs(['collections/movies']);
-requirejs(['views/detailsView']);
+// requirejs(['models/movie']);
+// requirejs(['collections/movies']);
+// requirejs(['views/detailsView']);
 
 
-requirejs(['views/movie']);
-requirejs(['views/movies']);
+// requirejs(['views/movie']);
+// requirejs(['views/movies']);
 
-requirejs(['Router/details']);
+// requirejs(['Router/details']);
 
-
+requirejs(['Router/main']);
